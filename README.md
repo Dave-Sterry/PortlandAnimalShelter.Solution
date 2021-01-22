@@ -1,6 +1,7 @@
 # Animal Shelter API Solution
 <div align="center">
 <img src="https://github.com/Dave-Sterry.png" width="200px" height="auto">
+</div>
 
 ### A C# website by David Sterry
 Initialized on 01/22/21
@@ -95,7 +96,7 @@ https://localhost:5000/api/dogs/2
 }
 ```
 ### Cats
-Access information on cats in the shelter
+Access information on Cats in the shelter
 
 ```
 GET /api/cats
@@ -123,5 +124,71 @@ https://localhost:5000/api/cats/?name=Neptune
     "Name": "Neptune",
     "Age": 3
 }
-
+```
 ..........................................................................................
+
+### Dogs 
+Access information on Dogs in the Shelter
+
+```
+GET /api/cats
+GET /api/2.0/dogs
+POST /api/2.0/dogs
+GET /api/2.0/dogs{id}
+PUT /api/2.0/dogs{id}
+DELETE /api/2.0/dogs{id}
+```
+#### Path Parameters
+| Parameter | Type | Default | Required | Description |
+| :---: | :---: | :---: | :---: | --- |
+| Name | string | none | true | Return matches by dog name.
+| Age | int | none | true | Return age of dog|
+
+### Example Query 
+```
+http://localhost:5000/api/dogs/?name=Kiva
+```
+### Sample JSON Response 
+```
+{
+    "Id: 2, 
+    "Name": "Kiva",
+    "Age": 11
+}
+```
+## **Known Bugs**
+No known bugs at this time
+
+## **Technology Used**
+* C# 7.3
+* .NET Core 2.2
+* Entity
+* Git
+* MySQL
+* dotnet script, REPL
+* Identity
+* Postman
+* Swagger
+* Swashbuckle
+
+<table>
+  <tr>
+    <th>Author</th>
+    <th>GitHub Profile</th>
+    <th>Contact Email</th>
+  </tr>
+  <tr>
+    <td>David Sterry</td>
+    <td>https://github.com/Dave-Sterry</td>
+    <td>sterry.david@gmail.com</td>
+  </tr>
+  </table>
+
+  ## **Contact**
+If you have any issues during installation delete both the bin and obj folders and follow the set up instructions again. Please contact me at sterry.david@gmail.com for help. 
+
+## **License**
+
+This project is licensed under **MIT 2.0**
+
+Copyright © 2020 David Sterry
