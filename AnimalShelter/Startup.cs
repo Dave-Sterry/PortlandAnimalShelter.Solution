@@ -46,6 +46,10 @@ namespace AnimalShelter
                         Url = new Uri("https://github.com/Dave-Sterry"),
                     },
                 });
+                // Set the comments path for the Swagger JSON and UI.
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
             });
         }
 

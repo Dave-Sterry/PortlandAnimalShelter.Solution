@@ -98,7 +98,7 @@ namespace AnimalShelter.Controller
         //DELETE api/2.0/cats/3
         /// <summary>
         /// Deletes a specific Cat.
-        /// </summary>
+        /// </summary>  
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
