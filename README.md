@@ -98,8 +98,12 @@ https://localhost:5000/api/dogs/2
 ### Cats
 Access information on Cats in the shelter
 
+Version 1
 ```
 GET /api/cats
+```
+Version 2
+```
 GET /api/2.0/cats
 POST /api/2.0/cats
 GET /api/2.0/cats{id}
@@ -130,8 +134,12 @@ https://localhost:5000/api/cats/?name=Neptune
 ### Dogs 
 Access information on Dogs in the Shelter
 
+Version 1
 ```
-GET /api/cats
+GET /api/dogs
+```
+Version 2
+```
 GET /api/2.0/dogs
 POST /api/2.0/dogs
 GET /api/2.0/dogs{id}
