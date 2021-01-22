@@ -62,7 +62,7 @@ namespace AnimalShelter.Controller
         /// <remarks>
         /// Sample request:
         ///
-        ///     GET /api/cats
+        ///     GET /api/2.0/cats
         ///     {
         ///         "id": 1
         ///         "name": "Neptune",

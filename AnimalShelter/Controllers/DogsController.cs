@@ -24,6 +24,16 @@ namespace AnimalShelter.Controller
         /// <summary>
         /// Returns all available Dogs.
         /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     GET /api/dogs
+        ///     {
+        ///         "id": 1
+        ///         "name": "Helo",
+        ///         "age":" 8,    
+        ///     }
+        /// </remarks>
         [HttpGet]
         public ActionResult <IEnumerable<Dog>> Get()
         {
@@ -48,6 +58,16 @@ namespace AnimalShelter.Controller
         /// <summary>
         /// Returns all available Dogs, with queries
         /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     GET /api/2.0/dogs
+        ///     {
+        ///         "id": 1
+        ///         "name": "Helo",
+        ///         "age":" 8,    
+        ///     }
+        /// </remarks>
         [HttpGet]
         public ActionResult<IEnumerable<Dog>> Get(string name, int age)
         {
@@ -67,11 +87,40 @@ namespace AnimalShelter.Controller
         /// <summary>
         /// Adds new Dogs.
         /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     GET /api/2.0/dogs
+        ///     {
+        ///         "id": 2
+        ///         "name": "Kiva",
+        ///         "age":" 11,    
+        ///     }
+        /// </remarks>
         [HttpPost]
         public void Post([FromBody] Dog dog)
         {
             _db.Dogs.Add(dog);
             _db.SaveChanges();
+        }
+         //GET api/2.0/dogs
+        /// <summary>
+        /// Returns Dogs by ID
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     GET /api/2.0/dogs
+        ///     {
+        ///         "id": 4
+        ///         "name": "Yates",
+        ///         "age":" 3,    
+        ///     }
+        /// </remarks>
+        [HttpGet("{id}")]
+        public ActionResult<Dog> Get(int id)
+        {
+            return _db.Dogs.FirstOrDefault(entry => entry.DogId == id);
         }
 
         //PUT api/2.0/dogs/2
@@ -102,6 +151,16 @@ namespace AnimalShelter.Controller
         /// <summary>
         /// Returns a random Dog
         /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     GET /api/2.0/dogs
+        ///     {
+        ///         "id": 5
+        ///         "name": "Nico",
+        ///         "age":" 5,    
+        ///     }
+        /// </remarks>
         [HttpGet]
         [Route("random")]
         public ActionResult <Dog> Random()
