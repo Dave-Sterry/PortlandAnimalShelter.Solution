@@ -110,6 +110,7 @@ POST /api/2.0/cats
 GET /api/2.0/cats{id}
 PUT /api/2.0/cats{id}
 DELETE /api/2.0/cats{id}
+RANDOM /api/2.0/cats/random
 ```
 
 #### Path Parameters
@@ -146,6 +147,7 @@ POST /api/2.0/dogs
 GET /api/2.0/dogs{id}
 PUT /api/2.0/dogs{id}
 DELETE /api/2.0/dogs{id}
+RANDOM /api/2.0/dogs/random
 ```
 #### Path Parameters
 | Parameter | Type | Default | Required | Description |
