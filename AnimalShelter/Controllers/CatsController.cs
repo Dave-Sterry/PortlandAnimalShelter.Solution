@@ -5,6 +5,7 @@ using AnimalShelter.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 
+
 namespace AnimalShelter.Controller
 {
     [ApiVersion("1.0")]
@@ -24,7 +25,16 @@ namespace AnimalShelter.Controller
         /// <summary>
         /// Returns all available Cats.
         /// </summary>
-
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     GET /api/cats
+        ///     {
+        ///         "id": 1
+        ///         "name": "Neptune",
+        ///         "age":" 3,    
+        ///     }
+        /// </remarks>
         [HttpGet]
         public ActionResult <IEnumerable<Cat>> Get()
         {
@@ -49,6 +59,16 @@ namespace AnimalShelter.Controller
         /// <summary>
         /// Returns all available Cats, with queries. 
         /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     GET /api/cats
+        ///     {
+        ///         "id": 1
+        ///         "name": "Neptune",
+        ///         "age":" 3,    
+        ///     }
+        /// </remarks>
         [HttpGet]
         public ActionResult<IEnumerable<Cat>> Get(string name, int age)
         {
@@ -68,6 +88,16 @@ namespace AnimalShelter.Controller
         /// <summary>
         /// Adds new Cats.
         /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     GET /api/cats
+        ///     {
+        ///         "id": 1
+        ///         "name": "Rosie",
+        ///         "age":" 12,    
+        ///     }
+        /// </remarks>
         [HttpPost]
         public void Post([FromBody] Cat cat)
         {
@@ -79,6 +109,16 @@ namespace AnimalShelter.Controller
         /// <summary>
         /// Returns Cats by ID.
         /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     GET /api/cats
+        ///     {
+        ///         "id": 3
+        ///         "name": "Socks",
+        ///         "age":" 3,    
+        ///     }
+        /// </remarks>
         [HttpGet("{id}")]
         public ActionResult<Cat> Get(int id)
         {
@@ -113,6 +153,16 @@ namespace AnimalShelter.Controller
         /// <summary>
         /// Returns a random Cat.
         /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     GET /api/cats
+        ///     {
+        ///         "id": 4
+        ///         "name": "Duncan",
+        ///         "age":" 8,    
+        ///     }
+        /// </remarks>
         [HttpGet]
         [Route("random")]
         public ActionResult <Cat> Random()
