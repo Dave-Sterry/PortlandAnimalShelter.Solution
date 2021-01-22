@@ -66,6 +66,7 @@ Import Database using Entity Framework Core
 
 Launch the API
 1. Navigate to AnimalShelter.Solution/AnimalShelter and type `dotnet run` into the terminal.
+2. Test the calls in Postman! 
 
 ## API Documentation
 Explore our API endpoints with Swagger Documentation:
