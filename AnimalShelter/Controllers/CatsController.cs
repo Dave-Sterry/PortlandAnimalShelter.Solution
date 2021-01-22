@@ -49,7 +49,7 @@ namespace AnimalShelter.Controller
             }
             if (age != 0)
             {
-                query = query.Where(entry => entry.Age = age;)
+                query = query.Where(entry => entry.Age == age);
             }
             return query.ToList();
         }
@@ -58,7 +58,7 @@ namespace AnimalShelter.Controller
         [HttpPost]
         public void Post([FromBody] Cat cat)
         {
-            _db.Cats.Add(cat)
+            _db.Cats.Add(cat);
             _db.SaveChanges();
         }
 
@@ -70,11 +70,11 @@ namespace AnimalShelter.Controller
         }
 
         //PUT api/cats/3
-        [HttpPUt({"id"})]
+        [HttpPut("{id}")]
         public void Put(int id, [FromBody] Cat cat)
         {
             cat.CatId = id;
-            _db.Entry(cat).State = EntityState.Modefied;
+            _db.Entry(cat).State = EntityState.Modified;
             _db.SaveChanges();
         }
 
