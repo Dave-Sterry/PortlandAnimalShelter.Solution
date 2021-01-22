@@ -8,6 +8,7 @@ using System;
 namespace AnimalShelter.Controller
 {
     [ApiVersion("1.0")]
+    [Produces("application/json")]
     [Route("api/Dogs")]
     [ApiController]
     public class DogsV1Controller : ControllerBase
@@ -20,6 +21,9 @@ namespace AnimalShelter.Controller
         }
 
         //GET api/dogs
+        /// <summary>
+        /// Returns all available Dogs.
+        /// </summary>
         [HttpGet]
         public ActionResult <IEnumerable<Dog>> Get()
         {
@@ -28,6 +32,7 @@ namespace AnimalShelter.Controller
     }
 
     [ApiVersion("2.0")]
+    [Produces("application/json")]
     [Route("api/{v:ApiVersion}/Dogs")]
     [ApiController]
     public class DogsV2Controller : ControllerBase
@@ -40,6 +45,9 @@ namespace AnimalShelter.Controller
         }
 
         //GET api/2.0/dogs
+        /// <summary>
+        /// Returns all available Dogs, with queries
+        /// </summary>
         [HttpGet]
         public ActionResult<IEnumerable<Dog>> Get(string name, int age)
         {
@@ -56,6 +64,9 @@ namespace AnimalShelter.Controller
         }
 
         //POST api/2.0/dogs
+        /// <summary>
+        /// Adds new Dogs.
+        /// </summary>
         [HttpPost]
         public void Post([FromBody] Dog dog)
         {
@@ -64,6 +75,9 @@ namespace AnimalShelter.Controller
         }
 
         //PUT api/2.0/dogs/2
+        /// <summary>
+        ///  Edits a specific Dog.
+        /// </summary>
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] Dog dog )
         {
@@ -73,6 +87,9 @@ namespace AnimalShelter.Controller
         }
 
         //DELETE api/2.0/dogs/2
+        /// <summary>
+        /// Deletes a specific Dog.
+        /// </summary>
         [HttpDelete("{id}")]
         public void Delete (int id)
         {
@@ -82,6 +99,9 @@ namespace AnimalShelter.Controller
         }
 
         //RANDOM api/2.0/dogs/random
+        /// <summary>
+        /// Returns a random Dog
+        /// </summary>
         [HttpGet]
         [Route("random")]
         public ActionResult <Dog> Random()

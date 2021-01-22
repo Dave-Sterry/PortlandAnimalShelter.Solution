@@ -8,6 +8,7 @@ using System;
 namespace AnimalShelter.Controller
 {
     [ApiVersion("1.0")]
+    [Produces("application/json")]
     [Route("api/Cats")]
     [ApiController]
     public class CatsV1Controller : ControllerBase
@@ -32,6 +33,7 @@ namespace AnimalShelter.Controller
     }
 
     [ApiVersion("2.0")]
+    [Produces("application/json")]
     [Route("api/{v:ApiVersion}/Cats")]
     [ApiController]
     public class CatsV2Controller : ControllerBase
@@ -75,7 +77,7 @@ namespace AnimalShelter.Controller
 
         //GET api/2.0/cats/3
         /// <summary>
-        /// Returns Cats by id.
+        /// Returns Cats by ID.
         /// </summary>
         [HttpGet("{id}")]
         public ActionResult<Cat> Get(int id)
