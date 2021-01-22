@@ -3,6 +3,7 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using AnimalShelter.Models;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace AnimalShelter.Controller
 {
@@ -78,6 +79,16 @@ namespace AnimalShelter.Controller
             var dogToDelete = _db.Dogs.FirstOrDefault(entry => entry.DogId ==id);
             _db.Dogs.Remove(dogToDelete);
             _db.SaveChanges();
+        }
+
+        //RANDOM api/2.0/dogs/random
+        [HttpGet]
+        [Route("random")]
+        public ActionResult <Dog> Random()
+        {
+            Random random = new Random();
+            int randomDog = random.Next(_db.Dogs.ToList().Count);
+            return _db.Dogs.FirstOrDefault(entry => entry.DogId == randomDog);
         }
     }
 }
