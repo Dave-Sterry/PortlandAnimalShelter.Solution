@@ -27,7 +27,7 @@ namespace AnimalShelter.Controller
     }
 
     [ApiVersion("2.0")]
-    [Route("api/v:ApiVersion}/Dogs")]
+    [Route("api/{v:ApiVersion}/Dogs")]
     [ApiController]
     public class DogsV2Controller : ControllerBase
     {
