@@ -5,6 +5,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.Reflection;
+using System.IO;
+using Microsoft.OpenApi.Models;
 
 namespace AnimalShelter
 {
@@ -28,7 +32,21 @@ namespace AnimalShelter
             o.DefaultApiVersion = new ApiVersion(1, 0);});
 
              // Register the Swagger generator, defining 1 or more Swagger documents
-            services.AddSwaggerGen();
+            services.AddSwaggerGen(c => 
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "Animal Shelter API",
+                    Description = "A simple API to return animals from a shelter",
+                    Contact = new OpenApiContact
+                    {
+                        Name = "David Sterry",
+                        Email = "sterry.david@gmail.com",
+                        Url = new Uri("https://github.com/Dave-Sterry"),
+                    },
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
