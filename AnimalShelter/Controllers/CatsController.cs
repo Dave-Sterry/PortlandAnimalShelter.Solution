@@ -20,6 +20,10 @@ namespace AnimalShelter.Controller
         }
 
         //GET api/cats
+        /// <summary>
+        /// Returns all available Cats.
+        /// </summary>
+
         [HttpGet]
         public ActionResult <IEnumerable<Cat>> Get()
         {
@@ -40,6 +44,9 @@ namespace AnimalShelter.Controller
         }
 
         //GET api/2.0/cats
+        /// <summary>
+        /// Returns all available Cats, with queries. 
+        /// </summary>
         [HttpGet]
         public ActionResult<IEnumerable<Cat>> Get(string name, int age)
         {
@@ -56,6 +63,9 @@ namespace AnimalShelter.Controller
         }
 
         //POST api/2.0/cats
+        /// <summary>
+        /// Adds new Cats.
+        /// </summary>
         [HttpPost]
         public void Post([FromBody] Cat cat)
         {
@@ -64,6 +74,9 @@ namespace AnimalShelter.Controller
         }
 
         //GET api/2.0/cats/3
+        /// <summary>
+        /// Returns Cats by id.
+        /// </summary>
         [HttpGet("{id}")]
         public ActionResult<Cat> Get(int id)
         {
@@ -71,6 +84,9 @@ namespace AnimalShelter.Controller
         }
 
         //PUT api/2.0/cats/3
+        /// <summary>
+        /// Edits a specific Cat.
+        /// </summary>
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] Cat cat)
         {
@@ -80,6 +96,9 @@ namespace AnimalShelter.Controller
         }
 
         //DELETE api/2.0/cats/3
+        /// <summary>
+        /// Deletes a specific Cat.
+        /// </summary>
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
@@ -89,6 +108,9 @@ namespace AnimalShelter.Controller
         }
 
         //RANDOM api/2.0/cats/random
+        /// <summary>
+        /// Returns a random Cat.
+        /// </summary>
         [HttpGet]
         [Route("random")]
         public ActionResult <Cat> Random()
