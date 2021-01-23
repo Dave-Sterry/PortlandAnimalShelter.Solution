@@ -8,13 +8,14 @@ Initialized on 01/22/21
 Last updated on 01/22/21
 
 ## **Project Description**
-An API that allows users to GET, POST, PUT, and DELETE listings for Cats and Dogs at an Animal Shelter 
+An API that allows users to GET, POST, PUT, and DELETE listings for Cats and Dogs at an Animal Shelter. This was a Friday Independent project for Epicodus to further my understanding of building my own API with functioning routes. 
 
 ## **User Stories**
 
 As a user, I want to GET and POST Dogs and Cats.
 As a user, I want to GET Dogs and Cats by id.
-As a user, I want to PUT and DELETE Dogs and Cats from the shelter.
+As a user, I want to PUT (Edit) and DELETE Dogs and Cats from the shelter.
+As a user, I want to get a random Dog or Cat returned to me
 
 ## **Required for Use**
 * C# and .Net Core installed on your local machine. Download .Net Core [Here](https://dotnet.microsoft.com/download) Follow the instructions to install on your machine
@@ -168,7 +169,7 @@ http://localhost:5000/api/dogs/?name=Kiva
 }
 ```
 ## **Known Bugs**
-No known bugs at this time
+Styling wont work
 
 ## **Technology Used**
 * C# 7.3
