@@ -178,7 +178,6 @@ Styling wont work
 * Git
 * MySQL
 * dotnet script, REPL
-* Identity
 * Postman
 * Swagger
 * Swashbuckle
